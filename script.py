@@ -5,7 +5,7 @@ from email.message import EmailMessage
 
 user = input("enter your email: ")
 password = input("enter your password: ")
-sender = input("email of the person you want to receive email from: ")
+receiver = input("email of the person you want to receive your email: ")
 smtp_con = input("your domain for smtp (example: smtp.yourdomain.com): ")
 
 # send email to user
@@ -45,7 +45,7 @@ def main():
     msg = message()
     print(msg)
     print("sending email to email")
-    send_email(user, password, smtp_con, sender, msg)
+    send_email(user, password, smtp_con, receiver, msg)
 
 if __name__ == "__main__":
     main()
