@@ -9,11 +9,11 @@ receiver = input("email of the person you want to receive your email: ")
 smtp_con = input("your domain for smtp (example: smtp.yourdomain.com): ")
 
 # send email to user
-def send_email(email, password, smtp, sender_email, body):
+def send_email(email, password, smtp, receiver_email, body):
     msg = EmailMessage()
     msg['Subject'] = "message"
     msg['From'] = email
-    msg['To'] = sender_email
+    msg['To'] = receiver_email
     msg.set_content(body)
     with smtplib.SMTP_SSL(smtp, 465) as smtp: # more secure way to send message
         smtp.login(email, password)
